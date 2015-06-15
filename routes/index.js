@@ -4,5 +4,11 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+  	var os = require('os');
+
+  	res.render('index', {
+		title: 'Express',
+		hostname: os.hostname(),
+		network: os.networkInterfaces()
+	})
 };
